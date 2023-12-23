@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "#schemas/*": ["schemas/*"],
+            "#entity/*": ["entities/entity_types/*"],
+            "#entities/*": ["entities/*"],
+            "#initializers/*": ["initializers/*"],
+            "#types/*": ["types/*"],
+            "#concepts/*": ["concepts/*"],
+            "#util/*": ["util/*"],
+
+            "#cmd/*": ["cmd/*"],
+            "#*": ["*"],
+
+            "#root/*": ["./*"],
+
+            "*": ["node_modules/*", "src/*"]
+        }
+    }
+}
