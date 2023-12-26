@@ -45,6 +45,7 @@ enum SOCKET_TYPES {
 #macro Default:DUAL_INSTANCE true
 // you can set this macro to >1 to test the game with 3+ instances running at once
 #macro Default:DUAL_INSTANCE_COUNT 1
+#macro Default:DRAW_ENABLED true
 
 // Production
 #macro Prod:IP   "xxx.xxx.xxx.xxx" // insert your external server IP
@@ -63,6 +64,9 @@ enum SOCKET_TYPES {
 #macro Dev:DUAL_INSTANCE true
 #macro Dev:DUAL_INSTANCE_COUNT 1
 
+#macro DevHeadless:DUAL_INSTANCE false
+#macro DevHeadless:DRAW_ENABLED false
+
 
 // warn about not setting the config (press the "target" icon in the top-right corner of IDE)
 #macro CONFIGS_SET true
@@ -79,3 +83,5 @@ if (!CONFIGS_SET) {
 
 // Allow up to 4000 ping (YYG recommends ~1000 for LAN-only games)
 network_set_config(network_config_connect_timeout, 4000)
+
+draw_enable_drawevent(DRAW_ENABLED);
