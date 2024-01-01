@@ -87,14 +87,14 @@ const common_config = {
     
     room: {
         // .yy room loading
-        rooms_path: '../Client/rooms',
+        rooms_path: '../TestMPlayer/rooms',
         warn_on_unknown_entity: false,
         
         use_starting_room: true,
         use_last_profile_room: false,
         use_persistent_position: false,
         
-        starting_room: 'Test Room',
+        starting_room: 'TestMPlayer',
         rest_timeout: 5,
         // when no players are present for a certain amount of time
         // set to -1 to disable this feature
@@ -113,10 +113,10 @@ const common_config = {
     // true = enabled, false = disabled
     timestamps_enabled: true,
     ws_enabled: true,
-    db_enabled: true,
+    db_enabled: false,
     shell_enabled: false,
     rooms_enabled: true,
-    entities_enabled: true,
+    entities_enabled: false,
     dt_enabled: true,
     ssl_enabled: false,
     logging_enabled: true,
@@ -153,7 +153,7 @@ const prod_config = {
     shell_enabled: false,
     verbose_lag: false,
     
-    initial_lobbies: 3 // number of lobbies to create on start
+    initial_lobbies: 1 // number of lobbies to create on start
 };
 
 
@@ -176,7 +176,7 @@ const dev_config = {
     shell_enabled: true,
     verbose_lag: true,
     
-    initial_lobbies: 3
+    initial_lobbies: 1
 };
 
 

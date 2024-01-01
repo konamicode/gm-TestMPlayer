@@ -2,6 +2,7 @@ import trace from '#util/logging';
 import Room  from '#concepts/room';
 import { EventEmitter } from 'events';
 import * as crypto from 'crypto';
+import { spawn } from 'child_process';
 
 
 export function lobbyCreate() {
@@ -16,8 +17,12 @@ export function lobbyCreate() {
         else {
             global.lobbies[lobbyid] = lobby;
             lobby.lobbyid = lobbyid;
+
+            lobby.gm_server = spawn('../TestHeadless/TestMPlayer.exe', ['-output logger.txt', lobbyid]);
             break;
         }
+
+        
     }
     
     return lobby;
@@ -52,6 +57,7 @@ export default class Lobby extends EventEmitter {
     /** @type {Room[]} */
     rooms = [];
     max_players = global.config.lobby.max_players || undefined; // Java???
+    gm_server = undefined;
     
     constructor() {
         super();

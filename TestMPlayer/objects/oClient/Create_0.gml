@@ -1,5 +1,11 @@
 /// @desc
 
+if (!MPLAYER_REMOTE) {
+	instance_destroy()
+	exit
+}
+
+
 #region Connect!
 
 connect = function() {

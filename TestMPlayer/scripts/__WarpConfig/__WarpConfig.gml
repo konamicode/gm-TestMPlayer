@@ -47,6 +47,8 @@ enum SOCKET_TYPES {
 #macro Default:DUAL_INSTANCE_COUNT 1
 #macro Default:DRAW_ENABLED true
 
+#macro Default:MPLAYER_REMOTE false
+
 // Production
 #macro Prod:IP   "xxx.xxx.xxx.xxx" // insert your external server IP
 //#macro Prod:IP   "195.2.80.50"
@@ -55,17 +57,41 @@ enum SOCKET_TYPES {
 #macro Prod:DUAL_INSTANCE true
 //#macro Prod:DUAL_INSTANCE false
 #macro Prod:DUAL_INSTANCE_COUNT 1
+#macro Prod:DRAW_ENABLED true
+#macro Prod:MPLAYER_REMOTE true
+
+#macro ProdHeadless:IP   "xxx.xxx.xxx.xxx" // insert your external server IP
+//#macro ProdHeadless:IP   "195.2.80.50"
+#macro ProdHeadless:PORT "1337"
+#macro ProdHeadless:WS_PORT "3000"
+#macro ProdHeadless:DUAL_INSTANCE false
+#macro ProdHeadless:DRAW_ENABLED false
+#macro ProdHeadless:MPLAYER_REMOTE false
 
 // Debug/Development
 #macro Dev:IP   "127.0.0.1"	// localhost
-//#macro IP "192.168.1.1" // LAN (insert your local IP)
 #macro Dev:PORT "1338"
 #macro Dev:WS_PORT "3001"
 #macro Dev:DUAL_INSTANCE true
-#macro Dev:DUAL_INSTANCE_COUNT 1
+#macro Dev:DUAL_INSTANCE_COUNT 0
+#macro Dev:DRAW_ENABLED true
+#macro Dev:MPLAYER_REMOTE true
 
+#macro DevSinglePlayer:IP   "127.0.0.1"	// localhost
+#macro DevSinglePlayer:PORT "1338"
+#macro DevSinglePlayer:WS_PORT "3001"
+#macro DevSinglePlayer:DUAL_INSTANCE false
+#macro DevSinglePlayer:DUAL_INSTANCE_COUNT 1
+#macro DevSinglePlayer:DRAW_ENABLED true
+#macro DevSinglePlayer:MPLAYER_REMOTE false
+
+#macro DevHeadless:IP   "127.0.0.1"	// localhost
+#macro DevHeadless:PORT "1338"
+#macro DevHeadless:WS_PORT "3001"
 #macro DevHeadless:DUAL_INSTANCE false
+#macro DevHeadless:DUAL_INSTANCE_COUNT 1
 #macro DevHeadless:DRAW_ENABLED false
+#macro DevHeadless:MPLAYER_REMOTE true
 
 
 // warn about not setting the config (press the "target" icon in the top-right corner of IDE)
@@ -84,4 +110,9 @@ if (!CONFIGS_SET) {
 // Allow up to 4000 ping (YYG recommends ~1000 for LAN-only games)
 network_set_config(network_config_connect_timeout, 4000)
 
-draw_enable_drawevent(DRAW_ENABLED);
+if (!DRAW_ENABLED) {
+	draw_enable_drawevent(DRAW_ENABLED);
+	var lobby = parameter_string(3);
+	
+	show_debug_message("Lobby!: " + string(lobby));
+}

@@ -1,0 +1,44 @@
+Attempting to set gamepadcount to 12
+Collision Event time(microsecs)=5
+Variable_Global_Init()
+PrepareGame()
+Audio_Init()
+Game_Prepare()
+Script_Prepare() 
+Welcome to Warp v5.1.0 by Evoleo!
+Lobby!: 358953
+[SUI] Welcome to SimpleUI v0.1.0!
+TimeLine_Prepare() 
+Object_Prepare() 
+Room_Prepare() 
+Finished PrepareGame() 
+Run_Start
+Done g_EffectsManager.Init()
+Done RenderStateManager
+CreateColPairs took 0.000000s 1 usecs for 23 object types obj_col_numb=0 physobjcount=0 resizes 0 final size 0
+Done ObjectLists
+Done Extension_Initialize
+About to startroom
+room start!
+Total memory used = 8027068 (0x007a7bbc) bytes 7.66MB
+Free memory = 5680232 (0x0056ac68) bytes 5.42MB
+Peak memory used = 8152288 (0x007c64e0) bytes 7.77MB
+**********************************.
+Entering main loop.
+**********************************.
+Connected to the server!
+Hello, client!
+Info about server: { game_version : "v1.0.0", game_name : "Warp Game", warp_version : "v5.1.0", compatible_game_versions : ">=1.0.0", server : "development" }
+new: 1692470.31
+old: 0
+diff: 1692470.31
+new: 1692477.12
+old: 1692470.31
+diff: 6.81
+room start!
+Lobby!: 358953
+recevied lobbies: [ { status : "open", player_count : 0, rooms : [ { map : { description : "A test map, a placeholder if you will", spawn_type : "distributed", max_players : 2, start_pos : [ { x : 64, y : 256 },{ x : 896, y : 256 } ], room_name : "rmTestMPlayer", name : "TestMPlayer" }, player_count : 0 } ], max_players : 100, full : 0, lobbyid : "358953" } ]
+playing!
+I'm the server!!
+room start!
+recevied lobbies: [ { status : "open", player_count : 1, rooms : [ { map : { description : "A test map, a placeholder if you will", spawn_type : "distributed", max_players : 2, start_pos : [ { x : 64, y : 256 },{ x : 896, y : 256 } ], room_name : "rmTestMPlayer", name : "TestMPlayer" }, player_count : 1 } ], max_players : 100, full : 0, lobbyid : "358953" } ]

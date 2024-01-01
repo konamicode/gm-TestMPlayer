@@ -52,7 +52,15 @@ export async function handlePacket(c, data) {
             trace('Message from client: ' + data.msg);
             c.sendMessage(data.msg + ' indeed');
             break;
-        
+        case 'ball': 
+            trace('Message from client: ' + data.x + ' ' + data.y);
+            c.broadcastLobby({ cmd: 'ball', ...data }, true);
+            //this.broadcastLobby({ cmd: 'ball', ...data }, true);
+            break;
+        case 'pad':
+            //trace(data);
+            break;
+
         default:
             let handler = packetHandlers[cmd];
             if (handler) {

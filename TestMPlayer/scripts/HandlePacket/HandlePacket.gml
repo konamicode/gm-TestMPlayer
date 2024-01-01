@@ -28,9 +28,31 @@ function handlePacket(data) {
 			trace(data.str)
 			break
 		case "message":
-			show_message_async(data.msg+"\n (c) Server")
+			show_message_async(data.msg+"\n (c) Server")			
 			break
-		
+		case "ball":			
+			with(oBall) {
+				x = data.x
+				y = data.y
+				
+				hsp = data.hsp
+				vsp = data.vsp
+				
+			}
+			break;
+		case "pad":
+			var team = data.team
+			
+			with(oPad) {
+				if (self.team == team) {
+					x = data.x
+					y = data.y
+					
+					vsp = data.vsp
+				}
+			}
+			
+			break
 		
 		default:
 			if (variable_struct_exists(global.cmd_handlers, cmd)) {

@@ -14,8 +14,10 @@ addHandler('lobby info', (c, data) => {
 
 addHandler('lobby join', (c, data) => {
     var lobbyid = data.lobbyid;
-    if (lobbyExists(lobbyid))
+    if (lobbyExists(lobbyid)) {
         c.lobbyJoin(lobbyid);
+        c.sendMessage("Joining Lobby!")
+    }
 });
 
 addHandler('lobby leave', (c, data) => {

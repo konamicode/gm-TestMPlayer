@@ -14,3 +14,7 @@ function sendClientInfo() {
 function sendRequestTime() {
 	send({ cmd: "server timestamp", local_time: local_timestamp() })
 }
+
+function sendRequestPlayerCount(count) {
+	send({ cmd: "request player count", count: count})
+}
